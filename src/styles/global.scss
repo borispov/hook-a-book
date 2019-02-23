@@ -1,0 +1,25 @@
+$main-background: #B5CA8D;
+$primary-color: #381D2A;
+$white: #EDF2F4;
+$book-grey: #426B69;
+$light-grey: #C5CAD8;
+$indigo: #2A4849;
+$blue: #1B7DD3;
+
+$Serif: PT Sans, sans-serif;
+$Lato: Lato, sans-serif;
+$Sans: PT Sans, sans-serif;
+
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $Sans;
+}
+
+body {
+  min-width: 1024px;
+}
+  
+
