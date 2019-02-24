@@ -4,7 +4,7 @@
     color: $dark-variant;
     font-family: $Lato;
     text-align: center;
-    padding-bottom: 25px;
+    margin-bottom: 10px;
   }
   .search__input {
     display: block;
@@ -14,14 +14,20 @@
     color: $dark-bluegrey;
     font-size: 1em;
     border-radius: 8px;
-    outline-color: transparentize($blue, 0.85);
     font-family: $Serif;
     font-weight: 600;
     text-align: center;
-    outline-width: medium;
-    border: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    &:focus {
+      outline: none;
+      &::placeholder {
+        font-size: 0.85em;
+        transition: all 0.3s ease-in-out;
+      }
+    }
     &::placeholder {
       font-style: italic;
+      transition: all 0.3s ease-in-out;
       text-align: center;
       font-size: 1.25em;
     }

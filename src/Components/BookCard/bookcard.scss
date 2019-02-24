@@ -1,51 +1,79 @@
 .bookcard {
-  width: 440px;
-  height: 210px;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 200px;
   background: darken($white, 15);
-  box-shadow: 0 1px 2px 4px rgba(0,0,0,0.06);
+  background: $white;
+  box-shadow: 0 1px 10px 6px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+  border-radius: 2px;
+  transition-property: background;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  &:hover {
+    background: $light-grey;
+  }
   .bookcard__container {
     height: 100%;
     width: 100%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
   }
   .bookcard__thumbnail {
     height: 200px;
     width: 150px;
+    overflow: hidden;
     img {
-      height: 200px;
-      width: 150px;
+      height: 100%;
+      max-height: 200px;
+      width: 160px;
+      mix-blend-mode: luminosity;
     }
   }
   .bookcard__body {
     padding: 10px 8px;
   }
-  .bookcard__author {
-    margin-bottom: 12px;
-    font-size: 18px;
-    font-weight: 400;
+  .bookcard__publisher {
+    font-size: 12px;
+    color: $indigo;
+    font-weight: 300;
     font-family: $Lato;
   }
+  .bookcard__author {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: $Sans;
+  }
   .bookcard__title {
-    margin-bottom: 16px;
-    font-size: 24px;
+    margin-bottom: 7px;
+    font-size: 20px;
     font-weight: 700;
     font-family: $Serif;
   }
   .bookcard__description {
-    line-height: 1.45;
+    line-height: 1.2em;
+    max-width: 250px;
+    font-size: 13px;
     color: $indigo;
   }
   .bookcard__btn {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
     background: $white;
-    border: thin $blue;
+    border-color: $blue;
     color: $primary-blue;
     transition: all 0.3s ease-in-out;
-    font-family: $Serif;
+    font-family: $Sans;
     &:hover {
+      position: absolute;
       background: $blue;
       color: $white;
-      border: none;
+      border-color: $blue;
+      box-shadow: 0 1px 1px 2px rgba(0,0,0,0.16);
+      transform: translateY(-1.25px);
       transition: all 0.3s ease-in-out;
     }
   }

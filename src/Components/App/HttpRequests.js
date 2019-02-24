@@ -2,14 +2,13 @@ import Axios from "axios";
 
 const API_KEY = `AIzaSyCP8bLTXq8d4o175cLxorMRVCTOB65588s`
 
-const URL = `https://www.googleapis.com/books/v1`
+const URL = `https://www.googleapis.com/books/v1/volumes?q=`
 
 const getBooks = async query => {
+  const constructedQueryURL = `${URL + query}&maxResults=15&key=${API_KEY}`
   return await Axios
-    .get(`${URL + query}&key=${API_KEY}`)
-    .then(response => {
-      console.log(response)
-    })
+    .get(constructedQueryURL)
+    .then(response => response.data.items)
     .catch(error => console.log(error))
 }
 

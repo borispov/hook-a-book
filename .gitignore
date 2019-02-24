@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# Hard Coded Data for testing - not sure I need to publish it along with the repo...
+/src/hardCodedData.js
+
 # testing
 /coverage
 
