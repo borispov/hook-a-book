@@ -6,12 +6,24 @@ $light-grey: #C5CAD8;
 $indigo: #2A4849;
 $blue: #1B7DD3;
 
+$background: #E0E0E0;
+
+$primary-blue: #2196F3;
+$dark-variant: #1976D2;
+$light-variant: #90CAF9;
+
+$dark-bluegrey: #455A64;
+$error: #B71C1C;
+$error2: #B00020;
+
+
+
 $Serif: PT Sans, sans-serif;
 $Lato: Lato, sans-serif;
 $Sans: PT Sans, sans-serif;
 
 
-html {
+*, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,7 +31,8 @@ html {
 }
 
 body {
-  min-width: 1024px;
+  background: $main-background;
+  // background: $background;
 }
   
 

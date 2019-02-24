@@ -1,0 +1,6 @@
+.bookgrid {
+  display: grid;
+  grid-auto-columns: minmax(3, 400px);
+  grid-auto-rows: minmax(3, 400px)
+  background: black;
+}

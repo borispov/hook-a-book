@@ -1,7 +1,22 @@
 .header {
   text-align: center;
   &__title {
+    position: relative;
     text-shadow: 0 1px 2px rgba(20, 20, 20, 0.12);
     color: $indigo;
+    color: $primary-blue;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 10%;
+      height: 4px;
+      background: $blue;
+      background: $error2;
+      top: 100%;
+      bottom: 0%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 60%;
+    }
   }
 }

@@ -1,15 +1,17 @@
 import React from 'react'
-import Axios from 'axios';
 
 class Search extends React.Component {
 
   state = {
     searchValue: null,
+    placeholder: '',
+    error: null
   }
 
   handleInputChange = e => {
     const searchValue = e.target.value
-    this.setState({searchValue})
+    this.setState({searchValue, error: null})
+
   }
 
   handleError = msg => {
@@ -18,21 +20,42 @@ class Search extends React.Component {
   
   handleSubmit = () => {
     const searchValue = this.state.searchValue
+    console.log(searchValue)
     searchValue 
-      ? handleError('cannot send empty query') 
-      : this.props.getQueryRequest(searchValue)
+      ? this.props.getQueryRequest(searchValue)
+      : this.handleError('cannot send empty query') 
   }
 
-}
+  render() {
+    const errors = this.state.error 
+      ? (
+        <div className="search__error">
+          <p className="error__display">
+            {this.state.error}!
+          </p>
+        </div>
+      ) 
+      : null
 
-const Search = () => {
-  return (
-    <div className="search">
-      <h4 className="search__title">Type a book and get it's info</h4>
-      <input type="search" name="" id=""/>
+    return (
+      <div className="search">
+        <h4 className="search__title">Type a book and get it's info</h4>
+        <input 
+          className="search__input" 
+          placeholder="Search Your Book" 
+          type="search"
+          onChange={(e) => this.handleInputChange(e)}
+        />
+        <button 
+          className="search__submit"
+          onClick={this.handleSubmit}>
+          Get Books
+        </button>
+        {errors}
+      </div>
+    )
+  }
 
-    </div>
-  )
 }
 
 export default Search
