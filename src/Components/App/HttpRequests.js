@@ -9,7 +9,7 @@ const getBooks = async query => {
   return await Axios
     .get(constructedQueryURL)
     .then(response => response.data.items)
-    .catch(error => console.log(error))
+    .catch(error => error)
 }
 
 const HttpRequests = {

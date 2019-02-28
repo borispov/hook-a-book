@@ -69,6 +69,7 @@ class App extends Component {
 
     // if the book exists in the bookshelf(bug: identical titles..) don't add it.
     if ( bookShelf.includes(s => s.title === book.title) ) return null
+
     bookShelf = bookShelf.concat(book)
     lsSet('shelf', bookShelf)
     this.setState({ bookShelf, showSnackbar: true })
@@ -87,6 +88,7 @@ class App extends Component {
     this.setState({loading: true, pastQueries})
 
     const results = await HttpRequests.getBooks(query)
+    results instanceof Error && this.setState({error: results.msg})
     !results.length && this.setState({error: 'Did not find any books. no results'})
     
     if (results.length) {
