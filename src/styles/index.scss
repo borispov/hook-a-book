@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300|PT+Sans:400,700|PT+Serif:400,700');
 @import './global.scss';
 @import '../Components/Search/search.scss';
-@import '../Components/App/App.scss';
+@import '../Components/App/app.scss';
 @import '../Components/Header/header.scss';
 @import '../Components/BookGrid/bookgrid.scss';
+@import '../Components/BookmarkIcon/bookmarkIcon.scss';
 @import '../Components/BookCard/bookcard.scss';
 @import '../Components/Loader/loader.scss';
+@import '../Components/Bookshelf/bookshelf.scss';
+@import '../Components/Modal/modal.scss';
+@import '../Components/Snackbar/snackbar.scss';

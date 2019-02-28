@@ -19,5 +19,21 @@
     grid-template-columns: 500px;
     grid-template-rows: 220px;
   }
-  
+
+  @for $i from 1 to 15 {
+    * > :nth-child(#{$i}){
+      animation: $i * 0.3s ease-in-out fade-in;
+    }
+  }
+}
+
+@keyframes fade-in{
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

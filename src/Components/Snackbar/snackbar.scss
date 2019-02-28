@@ -1,0 +1,33 @@
+.snackbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  width: 95%;
+  height: 50px;
+  background: $book-grey;
+  @media (min-width: 620px) {
+    width: 25%;
+  }
+  animation: fadeIn 0.2s ease-in-out both;
+
+  .snackbar__message {
+    padding-top: 10px;
+    text-align: center;
+    font-weight: 700;
+    font-family: $Serif;
+    color: $light-variant;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

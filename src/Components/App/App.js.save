@@ -5,13 +5,6 @@ import HttpRequests from './HttpRequests'
 import BookGrid from '../BookGrid/BookGrid'
 import Loader from '../Loader/Loader'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
-import Bookshelf from '../Bookshelf/Bookshelf'
-import Modal from '../Modal/Modal'
-import Snackbar from '../Snackbar/Snackbar';
-
-// helper function to work with localStorage's string conversion
-const lsPull = item => JSON.parse(localStorage.getItem(item))
-const lsSet = (item, data) => localStorage.setItem(item, JSON.stringify(data)) 
 
 // function to map the fetched results into required categories.
 // setting default values in case no author/title available
@@ -35,46 +28,29 @@ class App extends Component {
     pastQueries: [],
     searchQuery: null,
     loadedBooks: null,
-    bookShelf: [],
+    bookShelf: null,
     error: null,
     loading: false,
-    showShelf: false,
-    showSnackbar: false,
   }
 
   componentDidMount() {
-    let shelfData = lsPull('shelf')
-    let books = lsPull('books')
-    let queries = lsPull('queries')
+    let shelfData = localStorage.getItem('shelf')
+    let books = localStorage.getItem('books')
+    let queries = localStorage.getItem('queries')
 
     this.setState({
-      bookShelf: shelfData || [],
+      bookShelf: shelfData || null,
       pastQueries: queries || [],
       loadedBooks: books || null
     })
   }
 
-  deleteBookmark = idx => {
-    let { bookShelf } = this.state
-    bookShelf = [
-      ...bookShelf.slice(0, idx),
-      ...bookShelf.slice(idx + 1)
-    ]
-    this.setState({bookShelf})
-    lsSet('shelf', bookShelf)
-  }
-
   bookmarkHandler = (book) => {
     let { bookShelf } = this.state
-
     // if the book exists in the bookshelf(bug: identical titles..) don't add it.
     if ( bookShelf.includes(s => s.title === book.title) ) return null
     bookShelf = bookShelf.concat(book)
-    lsSet('shelf', bookShelf)
-    this.setState({ bookShelf, showSnackbar: true })
-    setTimeout(() => {
-      this.setState({showSnackbar: false})
-    }, 2300)
+    localStorage.setItem('shelf', [...bookShelf])
   }
 
   handleSearchQuery = async query => {
@@ -83,26 +59,24 @@ class App extends Component {
 
     // the fastest solution, would like to change it later to suit functional style.
     pastQueries.length >= 10 && pastQueries.shift()
-    lsSet('queries', pastQueries)
+    localStorage.setItem('queries', [...pastQueries])
     this.setState({loading: true, pastQueries})
 
     const results = await HttpRequests.getBooks(query)
     !results.length && this.setState({error: 'Did not find any books. no results'})
     
+    // not sure why I wrote this line. why would I add the fetched books to the bookshelf state.
+    // this.setState({ bookShelf: results})
     if (results.length) {
       const loadedBooks = results.map(bookInfoSort)
       this.setState({loadedBooks, loading: false })
-      lsSet('books', loadedBooks)
+      localStorage.setItem('books', [...loadedBooks])
     }
   }
 
-
-  openShelf = () => {this.setState({showShelf: true})}
-  closeShelf = () => {this.setState({showShelf: false})}
-
   render() {
     const title = 'Hook A Book'
-    const { showSnackbar, showShelf, bookShelf, pastQueries, loadedBooks, error, loading } = this.state
+    const { loadedBooks, error, loading } = this.state
     const showBookGrid = loadedBooks 
       ? (
         <ErrorBoundary>
@@ -115,36 +89,16 @@ class App extends Component {
       ? <h4 style={{textAlign: 'center', marginTop: '15px'}}>{error}</h4>
       : null
 
-    const bookmarksBtn = () => {
-      return (
-        <div className="shelf__btn">
-          <h4 className="shelf__label" onClick={this.openShelf}>My Shelf</h4>
-        </div>
-      )
-    }
 
-    const snackBarComponent = showSnackbar ? <Snackbar msg="Added to your bookshelf!" /> : null
 
     return (
       <div className="app">
         <Header title={title} />
         <ErrorBoundary>
-        <Search 
-          getQueryRequest={this.handleSearchQuery}
-          queries={pastQueries && pastQueries}
-        />
-        <Modal 
-          onClose={this.closeShelf}
-          show={showShelf}>
-           <Bookshelf 
-            deleteBookmark={this.deleteBookmark}
-            books={bookShelf} />
-        </Modal>
-        {bookmarksBtn()}
+          <Search getQueryRequest={this.handleSearchQuery}/>
         </ErrorBoundary>
         {errors}
         {showBookGrid}
-        {snackBarComponent}
       </div>
     )
   }

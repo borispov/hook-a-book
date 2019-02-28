@@ -4,3 +4,19 @@
   margin: 0 auto;
   max-width: 1024px;
 }
+
+
+.shelf__btn {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+  .shelf__label {
+    font-size: 21px;
+    font-family: $Serif;
+    color: $dark-variant;
+    cursor: pointer;
+    position: relative;
+
+  }
+}
