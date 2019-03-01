@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -11,14 +12,16 @@
     "react-select": "^2.4.1",
     "serve": "^10.1.2"
   },
+  "main": "index.js",
   "scripts": {
     "dev": "react-scripts start",
-    "start": "serve -s build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "eject": "react-scripts eject"
   },
+  "homepage": "https://hookabook.borispov.com",
   "eslintConfig": {
     "extends": "react-app"
   },
