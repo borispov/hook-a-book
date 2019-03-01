@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "hookabook.borispov.com/precache-manifest.385870c6788dc43889fb565f4332116f.js"
+  "/borispov/hook-a-book/precache-manifest.58cd86a6817282530b25f71d5652949d.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("hookabook.borispov.com/index.html", {
+workbox.routing.registerNavigationRoute("/borispov/hook-a-book/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
