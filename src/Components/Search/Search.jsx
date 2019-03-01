@@ -29,7 +29,6 @@ class Search extends React.Component {
 
   onKeyDown = (e) => {
     const { activeSuggestion } = this.state
-    const { queries } = this.props
     
     if (e.key === 'Enter') {
       this.setState({

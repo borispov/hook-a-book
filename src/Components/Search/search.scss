@@ -31,6 +31,10 @@
       text-align: center;
       font-size: 1.25em;
     }
+
+    @media (max-width: 520px) {
+      width: calc(100vw * 0.87);
+    }
   }
 
   .search__submit {

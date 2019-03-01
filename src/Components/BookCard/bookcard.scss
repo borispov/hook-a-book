@@ -11,6 +11,11 @@
   transition-property: background;
   transition-duration: 0.25s;
   transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+  @media (max-width: 520px) {
+    width: calc(100vw * 0.95);
+    margin: 0 auto;
+  }
   &:hover {
     background: $light-grey;
     background: $background;
