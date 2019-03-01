@@ -1,14 +1,14 @@
 {
-  "main.css": "/borispov/hook-a-book/static/css/main.33d79816.chunk.css",
-  "main.js": "/borispov/hook-a-book/static/js/main.ba7024e8.chunk.js",
-  "main.js.map": "/borispov/hook-a-book/static/js/main.ba7024e8.chunk.js.map",
-  "runtime~main.js": "/borispov/hook-a-book/static/js/runtime~main.0e2ac439.js",
-  "runtime~main.js.map": "/borispov/hook-a-book/static/js/runtime~main.0e2ac439.js.map",
-  "static/js/2.a8045c7b.chunk.js": "/borispov/hook-a-book/static/js/2.a8045c7b.chunk.js",
-  "static/js/2.a8045c7b.chunk.js.map": "/borispov/hook-a-book/static/js/2.a8045c7b.chunk.js.map",
-  "index.html": "/borispov/hook-a-book/index.html",
-  "precache-manifest.58cd86a6817282530b25f71d5652949d.js": "/borispov/hook-a-book/precache-manifest.58cd86a6817282530b25f71d5652949d.js",
-  "service-worker.js": "/borispov/hook-a-book/service-worker.js",
-  "static/css/main.33d79816.chunk.css.map": "/borispov/hook-a-book/static/css/main.33d79816.chunk.css.map",
-  "static/media/no-cover.png": "/borispov/hook-a-book/static/media/no-cover.53429f52.png"
+  "main.css": "borisio.github.io/hook-a-book/static/css/main.33d79816.chunk.css",
+  "main.js": "borisio.github.io/hook-a-book/static/js/main.ba7024e8.chunk.js",
+  "main.js.map": "borisio.github.io/hook-a-book/static/js/main.ba7024e8.chunk.js.map",
+  "runtime~main.js": "borisio.github.io/hook-a-book/static/js/runtime~main.f15e42db.js",
+  "runtime~main.js.map": "borisio.github.io/hook-a-book/static/js/runtime~main.f15e42db.js.map",
+  "static/js/2.a8045c7b.chunk.js": "borisio.github.io/hook-a-book/static/js/2.a8045c7b.chunk.js",
+  "static/js/2.a8045c7b.chunk.js.map": "borisio.github.io/hook-a-book/static/js/2.a8045c7b.chunk.js.map",
+  "index.html": "borisio.github.io/hook-a-book/index.html",
+  "precache-manifest.38f876fa0e8547fe7c5c174a4f30fdde.js": "borisio.github.io/hook-a-book/precache-manifest.38f876fa0e8547fe7c5c174a4f30fdde.js",
+  "service-worker.js": "borisio.github.io/hook-a-book/service-worker.js",
+  "static/css/main.33d79816.chunk.css.map": "borisio.github.io/hook-a-book/static/css/main.33d79816.chunk.css.map",
+  "static/media/no-cover.png": "borisio.github.io/hook-a-book/static/media/no-cover.53429f52.png"
 }

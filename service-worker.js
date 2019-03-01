@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/borispov/hook-a-book/precache-manifest.58cd86a6817282530b25f71d5652949d.js"
+  "borisio.github.io/hook-a-book/precache-manifest.38f876fa0e8547fe7c5c174a4f30fdde.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/borispov/hook-a-book/index.html", {
+workbox.routing.registerNavigationRoute("borisio.github.io/hook-a-book/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
